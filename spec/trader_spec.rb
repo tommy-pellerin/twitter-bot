@@ -1,9 +1,12 @@
 require_relative "../lib/trader"
 
-describe "the caesar_cipher method" do
-  it "should return the letter with a shift to the right in A-Z loop of 'shift_key'" do
-    expect(caesar_cipher("salut",5)).to eq("xfqzy")
-    expect(caesar_cipher("I LoVe Ruby",10)).to eq("S VyFo Beli")
+describe "the day_trader method" do
+  it "should return an array of 2 number : [the best buy date,the best sell date]'" do
+    expect(day_trader([1,10])).to eq([0,1])
+    expect(day_trader([5,15,3])).to eq([0,1])
+    expect(day_trader([10,7,25,12,1])).to eq([1,2])
+    expect(day_trader([17,3,6,9,15,8,6,1,10])).to eq([1,4])
+    
     
   end
 
